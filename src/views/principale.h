@@ -7,20 +7,31 @@
 #include "widgets/label.h"
 #include "widgets/battery.h"
 #include "widgets/button.h"
-#include "widgets/slider.h"
 
 class Principale : public View
 {
     private:
+        Label* label_piccolo;
+        Label* label_piccolo_x;
+        Label* label_piccolo_y;
+        Label* label_piccolo_t;
+        Label* label_grande;
+        Label* label_grande_x;
+        Label* label_grande_y; 
+        Label* label_grande_t;
+        Label* strategy;
 
-        Label* title;
-        Label* lorem;
+        Battery* battery_piccolo;
+        Battery* battery_grande;
 
-        Battery* battery;
-
-        Slider* slider;
+        Button* color;
+        Button* align;
+        Button* stgy;
+        Button* enable;
 
         bool screenChanged;
+
+        void setPos();
 
     public:
     Principale();
@@ -29,6 +40,12 @@ class Principale : public View
 
     //Override da View
     void update();
+
+    void setBatteryPiccolo();
+    int getBatteryGrande();
+
+    void setStrategyLabel();
+    void setColorButton();
 };
 
 #endif
